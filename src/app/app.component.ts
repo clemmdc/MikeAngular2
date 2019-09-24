@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FirebaseAuthService } from './providers/firebase-auth.service';
+import * as firebase from 'firebase/app';
+
 
 @Component({
   selector: 'app-root',
@@ -21,4 +23,13 @@ constructor(private firebaseAuth: FirebaseAuthService) {
   signFb(){
     this.firebaseAuth.signInWithPopup()
   }
-}
+
+  logOutfb(){
+      firebase.auth().signOut().then(function() {
+        console.log('Signed Out');
+      }, function(error) {
+        console.error('Sign Out Error', error);
+      });
+    }
+  }
+
