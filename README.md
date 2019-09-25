@@ -1,3 +1,7 @@
+## Il faut se connecter pour accéder à la page books, possibilité d'en ajouter et de les supprimer
+## Connexion facebook, et inscription normale
+## Superbe css
+
 # CoursIMIE
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.5.
