@@ -10,11 +10,14 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { RegisterComponent } from './@pages/register/register.component';
 import { FirebaseAuthService } from './providers/firebase-auth.service';
-import { SigninComponent } from './SignInComponent/signin.component';
-import { SignupComponent } from './SignUpComponent/signup.component';
-import { HeaderComponent } from './HeaderComponent/header.component';
-
-
+import { BooksService } from './providers/books-service.service';
+import { AuthGuardService } from './providers/auth-guard-service.service';
+import { SigninComponent } from './@pages/SignInComponent/signin.component';
+import { SignupComponent } from './@pages/SignUpComponent/signup.component';
+import { HeaderComponent } from './@pages/HeaderComponent/header.component';
+import { BookFormComponent } from './@pages/BookFormComponent/book-form.component';
+import { BookListComponent } from './@pages/BookListComponent/book-list.component';
+import { SingleBookComponent } from './@pages/SingleBookComponent/single-book.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { HeaderComponent } from './HeaderComponent/header.component';
     RegisterComponent,
     SigninComponent,
     SignupComponent,
-    HeaderComponent
+    HeaderComponent,
+    BookFormComponent,
+    BookListComponent,
+    SingleBookComponent
   ],
   imports: [
     BrowserModule,
@@ -30,9 +36,9 @@ import { HeaderComponent } from './HeaderComponent/header.component';
     AngularFireAuthModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  providers: [FirebaseAuthService],
+  providers: [FirebaseAuthService, BooksService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
